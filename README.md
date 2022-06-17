@@ -10,7 +10,7 @@ We set up the routing and link for each page <br/>
 4. Server side:<br/>
 We design and create MongoDB collections. We have mainly two collections: Commodies (products and supplies that will be displayed on webpage) and Users (Suppliers and customers that will use our services)
 5. For CRUD, our back end enables CRUD operations. We will implement Create (Register users, and users will be able to create products and supplies), Add (Users add supplies), Delete (Users delete supplies), Edit (Users edit supplies in quantity and description). In iteration2 we will continue working on CRUD functions on home page and storage supply page.
-6. Front end is deployed on Heroku
+6. Front end is deployed on Heroku https://store-supply-website.herokuapp.com/
 
 
 ## Introduction <br/>
