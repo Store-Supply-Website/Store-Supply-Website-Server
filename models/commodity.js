@@ -14,4 +14,4 @@ var CommoditySchema=new Schema({
 
   //genre:[{type:Schema.ObjectId, ref:'Genre' }]
   
-});
+},{collection:'Commodity'});
