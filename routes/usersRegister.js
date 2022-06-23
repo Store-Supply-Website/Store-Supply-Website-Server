@@ -31,7 +31,8 @@ router.post('/',async(req,res) =>{
 
         const user = await User.findOne({email:req.body.email})
         if(user){
-            return res.status(422).send({
+            return res.send({
+                status:422,
                 message:"this email has been registered"
             })
         }
@@ -43,7 +44,11 @@ router.post('/',async(req,res) =>{
                 password:req.body.password,
             })
             console.log("add new user");
-            res.json(newuser);
+            return res.send({
+                status:200,
+                data:newuser
+            })
+            
         }
        
         
