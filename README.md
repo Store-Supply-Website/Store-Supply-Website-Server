@@ -1,6 +1,13 @@
 # Store-Supply-Website-Server 
 Group Members:Chenjie Bei, Yan Wang, Yutong Shang
+## Iteration2 achievement  <br />
 
+1.Front End: <br />
+a.Create Commodity pag, Navigation bar, sign in page, register page, user profile page. These are all pages <br />
+b.Implement Material UI in all pages and make sure the style in all pages are consistent. <br />
+2.Back End: <br />
+a.Complete in implementing CRUD operation. Create implement API in GET and POST methods. Use Get to get user's profile info and supplies info that users post. Both home page, commodity page and user profile page will use GET method to get either suppies info and user info. Add supply button and Edit user info button will use Post method to add into database. <br />
+3.Front end and backend are deployed to heroku. <br />
 ## Iteration1 achievement  <br />
 1. We divided the project to two repo: Server and Client <br/>
 2. Set up MongoDB and Express <br/>
@@ -14,9 +21,9 @@ We design and create MongoDB collections. We have mainly two collections: Commod
 ![image](https://user-images.githubusercontent.com/98197405/174235772-b37f91cf-3622-43ff-9f48-ec3375b11900.png)
 7. Future task contribution plan: <br/>
 Front end:
-UI design:
-front end CRUD operation: 
-Back end: Interface and API design Yutong 
+UI design:Yan Wang
+front end CRUD operation: Chenjie Bei
+Back end: Interface and API design Yutong Shang
 
 
 ## Introduction <br/>
