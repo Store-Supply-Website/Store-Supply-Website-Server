@@ -3,9 +3,9 @@ Group Members:Chenjie Bei, Yan Wang, Yutong Shang
 ## Iteration2 achievement  <br />
 
 1.Front End: <br />
-a.Create Commodity pag, Navigation bar, sign in page, register page, user profile page. These are all pages we plan for this projects. Project is moving as anticipated<br />
-b.Set up routes and links in all pages <br />
-b.Implement Material UI in all pages and make sure the style in all pages are consistent. <br />
+a.Create Commodity pag, Navigation bar, sign in page, register page, user profile page. These are all pages we plan for this projects. You will be able to see the Commodity page, and click link to see the details of each commodity. We will be working on delete function and update function. Project is moving as anticipated<br />
+b.Set up most routes and links in all pages. Still need to update some routes. <br />
+b.Implement Material UI in all pages and make sure the style in all pages are consistent. Plan to improve on design if have time<br />
 2.Back End: <br />
 a.Complete in implementing CRUD operation. Create implement API in GET and POST methods. Use Get to get user's profile info and supplies info that users post. Both home page, commodity page and user profile page will use GET method to get either suppies info and user info. Add supply button and Edit user info button will use Post method to add into database. <br />
 3.Test in local file and deploy Front end and backend to heroku. <br />
