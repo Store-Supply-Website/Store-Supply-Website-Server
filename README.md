@@ -14,9 +14,9 @@ We design and create MongoDB collections. We have mainly two collections: Commod
 ![image](https://user-images.githubusercontent.com/98197405/174235772-b37f91cf-3622-43ff-9f48-ec3375b11900.png)
 7. Future task contribution plan: <br/>
 Front end:
-UI design:Yan Wang
-front end CRUD operation: Chenjie Bei
-Back end: Interface and API design Yutong Shang
+UI design:
+front end CRUD operation: 
+Back end: Interface and API design Yutong 
 
 
 ## Introduction <br/>
