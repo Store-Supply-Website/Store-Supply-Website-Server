@@ -20,13 +20,16 @@ router.post('/', async(req,res)=>{
         const user = await User.findOne({email:req.body.email, password:req.body.password});
         if(user !=null){
             console.log("find user in databse");
-            res.send({user});
+            res.send({
+                status:200,
+                data:user});
             return true;
         }
         else{
             if(!user) {
                 console.log("cannot find");
-                return res.status(422).send({
+                return res.send({
+                    status:422,
                     message:"user not exist"
                 })
             };
