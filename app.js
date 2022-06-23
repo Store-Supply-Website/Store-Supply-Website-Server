@@ -41,6 +41,7 @@ app.get('/register', function (req, res) {
     //res.send('this is register!')
 });
 
+module.exports = app;
 /*
 app.listen(port, function () {
     console.log(`Example app listening on port ${port}!`)
