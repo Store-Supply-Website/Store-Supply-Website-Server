@@ -26,7 +26,7 @@ module.exports = {
     },
     readFromDB: async function readFromDB(filter) {
         try {
-            const result = await client.db("cs5610").collection("tasks").findOne(filter);
+            const result = await client.db(dbname).collection(collectionname).findOne(filter);
             return result;
         }
         catch (err) {
@@ -35,7 +35,7 @@ module.exports = {
     },
     updateOne: async function updateOne(filter, operator) {
         try {
-            const result = await client.db("cs5610").collection("tasks").updateOne(filter, operator);
+            const result = await client.db(dbname).collection(collectionname).updateOne(filter, operator);
             return result;
         }
         catch (err) {
@@ -44,7 +44,7 @@ module.exports = {
     },
     deleteOne: async function deleteOne(filter) {
         try {
-            const result = await client.db("cs5610").collection("tasks").deleteOne(filter);
+            const result = await client.db(dbname).collection(collectionname).deleteOne(filter);
             return result;
         }
         catch (err) {
@@ -53,7 +53,7 @@ module.exports = {
     },
     readAll: async function readAll() {
         try {
-            const result = await client.db("cs5610").collection("tasks").find();
+            const result = await client.db(dbname).collection(collectionname).find();
 
             return result;
         }
