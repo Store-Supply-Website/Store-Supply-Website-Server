@@ -4,8 +4,8 @@
   "description": "Group Members:Chenjie Bei, Yan Wang, Yutong Shang",
   "main": "index.js",
   "scripts": {
-    "start": "node app.js",
-    "devstart": "nodemon app.js",
+    "start": "node ./bin/www",
+    "devstart": "nodemon ./bin/www",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
