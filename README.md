@@ -13,8 +13,9 @@ a.Complete in implementing CRUD operation.<br />
 Create implement API in GET and POST methods. Use Get to get user's profile info and supplies info that users post.<br />
 Both home page, commodity page and user profile page will use GET method to get either suppies info and user info.<br />
 Add supply button and Edit user info button will use Post method to add into database. <br />
-3.Test in local file and deploy Front end and backend to heroku. <br />
-
+3.Test in local file and deploy Front end and backend to heroku https://store-supply-website.herokuapp.com/. <br />
+![1261655959834_ pic_hd](https://user-images.githubusercontent.com/98197405/175213027-e1a91c0e-1a1a-45e4-8538-744b4d9b820a.jpg)
+![image](https://user-images.githubusercontent.com/98197405/174235772-b37f91cf-3622-43ff-9f48-ec3375b11900.png)
 
 ## Iteration1 achievement  <br />
 1. We divided the project to two repo: Server and Client <br/>
