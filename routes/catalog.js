@@ -24,5 +24,10 @@ router.post('/commodity:id/create',commodity_controller.commodity_create);
 
 router.get('/supplier',commodity_controller.commodity_list_supplierall);
 
+router.get('/supplier',supplier_controller.user_detail);
+
+router.post('/supplier/update',supplier_controller.user_update);
+
+router.post('supplier',supplier_controller.user_delete);
 
 module.exports = router;

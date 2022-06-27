@@ -60,3 +60,28 @@ exports.user_detail = async function user_detail(req, res,){
         console.log(err);
     }
 }
+
+exports.user_delete = async function user_delete(req,res){
+    console.log("delete user");
+
+    try{
+        const deleteUser =await User.findByIdAndRemove(req.body.id);
+        deleteUser.exec((err,res)=>{
+            if(err){
+                res.send({
+                    status:401,
+                    msg:"delete user failure"
+                })
+            }
+            res.send({
+                status:200,
+                data:deleteUser,
+                msg: "delete user successfully",
+            });
+        })
+        
+    }
+    catch(err){
+        console.log(err);
+    }
+}
