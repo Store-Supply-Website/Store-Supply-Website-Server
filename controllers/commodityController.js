@@ -1,5 +1,6 @@
 var Commodity = require('../models/commodity');
 var User = require('../models/user');
+var async = require('async');
 
 
 const { body,validationResult } = require("express-validator");
@@ -13,11 +14,29 @@ exports.commodity_list = async function commodity_list(req,res){
     console.log("show commodity_list");
 
     try{
+        /*
         let query =await Commodity.find({},'supplier commodityname date').sort({date:-1}).limit(12);
+        
         query.exec((err, res)=>{
             if(err) return handleError(err);
             console.log(res);
             if(res==null){
+                console.log('commodity not found');
+                var err = new Error('commodity not found');
+                err.status = 404;
+                res.send(err);
+            }
+            //res.send(res);
+            res.send({
+                status:200,
+                msg:"show commodity list successfully",
+                data:query
+            })
+        })*/
+        Commodity.find({},'supplier commodityname date').sort({date:-1}).limit(12).exec((err, query)=>{
+            if(err) return handleError(err);
+            console.log(query);
+            if(query==null){
                 console.log('commodity not found');
                 var err = new Error('commodity not found');
                 err.status = 404;
