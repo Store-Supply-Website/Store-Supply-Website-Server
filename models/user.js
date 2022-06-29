@@ -13,6 +13,10 @@ var UserSchema=new Schema({
   
 },{collection:'User'});
 
+UserSchema.virtual('url').get(function() {
+  return '/catalog/supplier/' + this._id;
+});
+
 const User = mongoose.model('User',UserSchema);
 
 module.exports = User;

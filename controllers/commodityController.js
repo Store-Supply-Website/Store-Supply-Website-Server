@@ -60,7 +60,7 @@ exports.commodity_list_supplier = async function commodity_list_supplier(req,res
     console.log("show commodity_list");
 
     try{
-        Commodity.find({'supplier':res.params.user}).sort({date:-1}).limit(6).exec((err, query)=>{
+        Commodity.find({'supplier':res.body.user}).sort({date:-1}).limit(6).exec((err, query)=>{
             if(err) return handleError(err);
             console.log(query);
             if(query.length==0){
@@ -87,7 +87,7 @@ exports.commodity_list_supplierall = async function commodity_list_supplierall(r
     console.log("show commodity_list");
 
     try{
-        Commodity.find({'supplier':res.params.user}).sort({date:-1}).limit(6).exec((err, query)=>{
+        Commodity.find({'supplier':res.body.user}).sort({date:-1}).limit(6).exec((err, query)=>{
             if(err) return handleError(err);
             console.log(query);
             if(query.length==0){
@@ -136,7 +136,7 @@ exports.commodity_search = async function commodity_search(req, res){
     console.log("search commodity");
 
     try{
-        Commodity.find({'commodityname':req.params.commodityname}).exec((err, query)=>{
+        Commodity.find({'commodityname':req.body.commodityname}).exec((err, query)=>{
             if(err){
                 res.send({
                     status:401,

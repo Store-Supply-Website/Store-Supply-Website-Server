@@ -13,3 +13,7 @@ var SupplierSchema=new Schema({
   phone:{type:string, required:true},
   
 });
+
+SupplierSchema.virtual('url').get(function() {
+  return '/catalog/supplier/' + this._id;
+});
