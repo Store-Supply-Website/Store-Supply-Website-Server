@@ -162,12 +162,13 @@ exports.commodity_create =async function commodity_create(req,res){
     console.log("create commodity");
 
     try{
-        Commodity.create({
+        const newCommodity = await Commodity.create({
             supplier:req.body.user,
             commodityname:req.body.commodityname,
             content:req.body.content,
             date:Date.now()
-        }).exec((err,query)=>{
+        });
+        newCommodity.save(function(err){
             if(err){
                 res.send({
                     status:401,
@@ -177,10 +178,10 @@ exports.commodity_create =async function commodity_create(req,res){
             console.log("add new commodity");
             res.send({
                 status:200,
-                data:query,
+                //data:query,
                 msg: "add new commodity successfully",
             });
-        })
+        });
         
     }
     catch(err){
@@ -215,13 +216,14 @@ exports.commodity_delete = async function commodity_delete(req,res){
 exports.commodity_update = async function commodity_update(req, res){
 
     try{
-        Commodity.create({
+        const newCommodity = await Commodity.create({
             supplier:req.body.supplier,
             commodityname:req.body.commodityname,
             content:req.body.content,
             date:Date.now(),
             _id:req.params.id  //old id
-        }).exec((err,query)=>{
+        }).
+        Commodity.findByIdAndUpdate(req.params.id, newCommodity,{}, function(err, query){
             if(err){
                 res.send({
                     status:401,

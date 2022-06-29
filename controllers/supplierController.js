@@ -8,14 +8,15 @@ exports.user_update =async function user_update(req,res){
     console.log("update user");
 
     try{
-        User.create({
+        const newUser = await User.create({
             email:req.body.email,
             username:req.body.username,
             password:req.body.password,
             phone:req.body.phone,
             address:req.body.address,
             _id:req.params.id  //old id
-        }).exec((err,query)=>{
+        });
+        User.findByIdAndUpdate(req.params.id, newUser,{}, function(err, query){
             if(err){
                 res.send({
                     status:401,
