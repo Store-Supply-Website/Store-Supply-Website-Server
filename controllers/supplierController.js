@@ -8,15 +8,14 @@ exports.user_update =async function user_update(req,res){
     console.log("update user");
 
     try{
-        const newUser = await User.create({
+        User.create({
             email:req.body.email,
             username:req.body.username,
             password:req.body.password,
             phone:req.body.phone,
             address:req.body.address,
             _id:req.params.id  //old id
-        })
-        newUser.exec((err,res)=>{
+        }).exec((err,query)=>{
             if(err){
                 res.send({
                     status:401,
@@ -26,7 +25,7 @@ exports.user_update =async function user_update(req,res){
             console.log("update user successfully");
             res.send({
                 status:200,
-                data:newUser,
+                data:query,
                 msg:"update user successfully"
             })
         });
@@ -43,16 +42,15 @@ exports.user_detail = async function user_detail(req, res,){
     console.log("show user details");
 
     try{
-        let query = await User.findById(req.params.id);
-        query.exec((err,res)=>{
+        User.findById(req.params.id).exec((err,res)=>{
                 if(err){
                     //return handleError(err);
                     res.send({status:401,
                     msg:"cannot find user"})
                 } 
-                console.log(res);
+                console.log(query);
                 res.send({status:200,
-                data:res,
+                data:query,
                 meg:"find user"});
         })
     }
@@ -65,8 +63,7 @@ exports.user_delete = async function user_delete(req,res){
     console.log("delete user");
 
     try{
-        const deleteUser =await User.findByIdAndRemove(req.body.id);
-        deleteUser.exec((err,res)=>{
+        User.findByIdAndRemove(req.body.id).exec((err,query)=>{
             if(err){
                 res.send({
                     status:401,
@@ -75,7 +72,7 @@ exports.user_delete = async function user_delete(req,res){
             }
             res.send({
                 status:200,
-                data:deleteUser,
+                data:query,
                 msg: "delete user successfully",
             });
         })

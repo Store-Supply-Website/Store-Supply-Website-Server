@@ -36,11 +36,11 @@ exports.commodity_list = async function commodity_list(req,res){
         Commodity.find({},'supplier commodityname date').sort({date:-1}).limit(12).exec((err, query)=>{
             if(err) return handleError(err);
             console.log(query);
-            if(query==null){
+            if(query.length==0){
                 console.log('commodity not found');
                 var err = new Error('commodity not found');
                 err.status = 404;
-                res.send(err);
+                res.send({status:404,msg:"commodity list is empty"});
             }
             //res.send(res);
             res.send({
@@ -60,15 +60,14 @@ exports.commodity_list_supplier = async function commodity_list_supplier(req,res
     console.log("show commodity_list");
 
     try{
-        let query =await Commodity.find({supplier:res.body.user}).sort({date:-1}).limit(6);
-        query.exec((err, res)=>{
+        Commodity.find({'supplier':res.body.user}).sort({date:-1}).limit(6).exec((err, query)=>{
             if(err) return handleError(err);
-            console.log(res);
-            if(res==null){
+            console.log(query);
+            if(query.length==0){
                 console.log('commodity not found');
                 var err = new Error('commodity not found');
                 err.status = 404;
-                res.send(err);
+                res.send({status:404,msg:"supplier commodity list is empty"});
             }
             //res.send(res);
             res.send({
@@ -88,15 +87,14 @@ exports.commodity_list_supplierall = async function commodity_list_supplierall(r
     console.log("show commodity_list");
 
     try{
-        let query =await Commodity.find({supplier:res.body.user}).sort({date:-1}).limit(6);
-        query.exec((err, res)=>{
+        Commodity.find({'supplier':res.body.user}).sort({date:-1}).limit(6).exec((err, query)=>{
             if(err) return handleError(err);
-            console.log(res);
-            if(res==null){
+            console.log(query);
+            if(query.length==0){
                 console.log('commodity not found');
                 var err = new Error('commodity not found');
                 err.status = 404;
-                res.send(err);
+                res.send({status:404,msg:"commodity list is empty"});
             }
             //res.send(res);
             res.send({
@@ -117,17 +115,16 @@ exports.commodity_detail = async function commodity_detail(req, res){
     console.log("show commodity details");
 
     try{
-        let query = await Commodity.findById(req.params.id);
-        query.exec((err,res)=>{
+        Commodity.findById(req.params.id).exec((err,query)=>{
                 if(err){
                     //return handleError(err);
                     res.send({status:401,
                     msg:"cannot find commodity"})
                 } 
-                console.log(res);
+                console.log(query);
                 res.send({status:200,
-                data:res,
-                meg:"find commodity"});
+                data:query,
+                meg:"find commodity successfully"});
         })
     }
     catch(err){
@@ -139,8 +136,7 @@ exports.commodity_search = async function commodity_search(req, res){
     console.log("search commodity");
 
     try{
-        const query = await Commodity.find({commodityname:req.body.commodityname});
-        query.exec((err, res)=>{
+        Commodity.find({'commodityname':req.body.commodityname}).exec((err, query)=>{
             if(err){
                 res.send({
                     status:401,
@@ -166,13 +162,12 @@ exports.commodity_create =async function commodity_create(req,res){
     console.log("create commodity");
 
     try{
-        const newCommodity =await Commodity.create({
+        Commodity.create({
             supplier:req.body.user,
             commodityname:req.body.commodityname,
             content:req.body.content,
             date:Date.now()
-        })
-        newCommodity.exec((err,res)=>{
+        }).exec((err,query)=>{
             if(err){
                 res.send({
                     status:401,
@@ -182,10 +177,11 @@ exports.commodity_create =async function commodity_create(req,res){
             console.log("add new commodity");
             res.send({
                 status:200,
-                data:newCommodity,
+                data:query,
                 msg: "add new commodity successfully",
             });
         })
+        
     }
     catch(err){
         console.log(err);
@@ -196,8 +192,7 @@ exports.commodity_delete = async function commodity_delete(req,res){
     console.log("delete commodity");
 
     try{
-        const deleteCommodity =await Commodity.findByIdAndRemove(req.body.id);
-        deleteCommodity.exec((err,res)=>{
+        Commodity.findByIdAndRemove(req.body.id).exec((err,query)=>{
             if(err){
                 res.send({
                     status:401,
@@ -206,7 +201,7 @@ exports.commodity_delete = async function commodity_delete(req,res){
             }
             res.send({
                 status:200,
-                data:deleteCommodity,
+                data:query,
                 msg: "delete commodity successfully",
             });
         })
@@ -220,14 +215,13 @@ exports.commodity_delete = async function commodity_delete(req,res){
 exports.commodity_update = async function commodity_update(req, res){
 
     try{
-        const newCommodity = await Commodity.create({
+        Commodity.create({
             supplier:req.body.supplier,
             commodityname:req.body.commodityname,
             content:req.body.content,
             date:Date.now(),
             _id:req.params.id  //old id
-        })
-        newCommodity.exec((err,res)=>{
+        }).exec((err,query)=>{
             if(err){
                 res.send({
                     status:401,
@@ -237,10 +231,11 @@ exports.commodity_update = async function commodity_update(req, res){
             console.log("update commodity successfully");
             res.send({
                 status:200,
-                data:newCommodity,
+                data:query,
                 msg:"update commodity successfully"
             })
         });
+       
 
     }
     catch(err){
