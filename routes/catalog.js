@@ -12,7 +12,7 @@ router.get('/homepagelist',commodity_controller.commodity_list_supplier);
 
 router.get('/commodity',commodity_controller.commodity_search);
 
-router.get('/commodity',commodity_controller.commodity_list);
+router.get('/commoditylist',commodity_controller.commodity_list);
 
 router.get('/commodity/:id',commodity_controller.commodity_detail);
 
