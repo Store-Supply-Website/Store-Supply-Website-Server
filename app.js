@@ -37,7 +37,7 @@ app.use('/', usersLogin)
 
 var catalogRouter = require('./routes/catalog.js'); 
 
-//app.use('/catalog', catalogRouter); 
+app.use('/catalog', catalogRouter); 
 
 app.get('/register', function (req, res) {
     res.send('this is register!')
