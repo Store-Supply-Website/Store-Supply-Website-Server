@@ -8,7 +8,7 @@ exports.user_update =async function user_update(req,res){
     console.log("update user");
 
     try{
-        const newUser = await User.create({
+        const newUser = await User({
             email:req.body.email,
             username:req.body.username,
             password:req.body.password,
