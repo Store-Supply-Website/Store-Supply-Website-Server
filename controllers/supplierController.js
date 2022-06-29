@@ -9,9 +9,9 @@ exports.user_update =async function user_update(req,res){
 
     try{
         const newUser = await User({
-            email:req.body.email,
+            
             username:req.body.username,
-            password:req.body.password,
+            
             phone:req.body.phone,
             address:req.body.address,
             _id:req.params.id  //old id

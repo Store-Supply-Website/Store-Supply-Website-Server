@@ -217,7 +217,7 @@ exports.commodity_update = async function commodity_update(req, res){
 
     try{
         const newCommodity = await Commodity({
-            supplier:req.body.supplier,
+            
             commodityname:req.body.commodityname,
             content:req.body.content,
             date:Date.now(),
