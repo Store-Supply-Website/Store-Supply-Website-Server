@@ -72,7 +72,7 @@ module.exports = {
 
        
       } else {
-        res.sned({status:400,msg:"cannot find image"});
+        res.send({status:400,msg:"cannot find image"});
       }
     });
   },
