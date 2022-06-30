@@ -1,6 +1,6 @@
 TBD: 
 Shoot video
-Add Page images-Github
+Add Page images-Github(done)
 Upload accessibility report(done)
 Merge to main
 upload to canvas
