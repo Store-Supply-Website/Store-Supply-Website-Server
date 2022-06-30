@@ -242,7 +242,7 @@ exports.commodity_update = async function commodity_update(req, res){
             content:req.body.content,
             date:Date.now(),
             _id:req.body.id  //old id
-        }).
+        });
         Commodity.findByIdAndUpdate(req.body.id, newCommodity,{}, function(err, query){
             if(err){
                 res.send({
