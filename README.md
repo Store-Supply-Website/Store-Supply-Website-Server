@@ -1,9 +1,11 @@
-!!!TBD: Tag iteration
-!!!Page images
-Upload accessibility report
+TBD: 
+Shoot video
+Add Page images-Github
+Upload accessibility report(done)
 Merge to main
-upload hw
+upload to canvas
 slide divide parts
+Tag iteration
 
 # Store-Supply-Website-Server 
 Group Members:Chenjie Bei, Yan Wang, Yutong Shang
