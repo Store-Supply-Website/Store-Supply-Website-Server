@@ -25,7 +25,7 @@ module.exports = {
         });
         newImg.save(function(err, image) {
           if (err) throw err;
-          res.send({status:200,msg:"image save successfully",data:newImg});
+          res.send({status:200,msg:"image save successfully",data:image});
           //image.uniqueId);
         });
       });
@@ -38,10 +38,8 @@ module.exports = {
   },
 
   remove: function(req, res) {
-    ImageModel.findOne({ filename: { $regex: req.params.image_id } }, function(
-      err,
-      image,
-    ) {
+    //ImageModel.findOne({ filename: { $regex: req.params.image_id } }, function(
+      ImageModel.findById(req.params.image_id), function(err,image){
       if (err) throw err;
       fs.unlink(path.resolve('./public/upload/' + image.filename), function(
         err,
