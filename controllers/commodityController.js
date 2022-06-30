@@ -43,11 +43,14 @@ exports.commodity_list = async function commodity_list(req,res){
                 res.send({status:404,msg:"commodity list is empty"});
             }
             //res.send(res);
-            res.send({
-                status:200,
-                msg:"show commodity list successfully",
-                data:query
-            })
+            else{
+                res.send({
+                    status:200,
+                    msg:"show commodity list successfully",
+                    data:query
+                })
+            }
+            
         })
     }
     catch(err){
@@ -70,11 +73,14 @@ exports.commodity_list_supplier = async function commodity_list_supplier(req,res
                 res.send({status:404,msg:"supplier commodity list is empty"});
             }
             //res.send(res);
-            res.send({
-                status:200,
-                msg:"show supplier's commodity list successfully",
-                data:query
-            })
+            else{
+                res.send({
+                    status:200,
+                    msg:"show supplier's commodity list successfully",
+                    data:query
+                })
+            }
+            
         })
     }
     catch(err){
@@ -96,12 +102,14 @@ exports.commodity_list_supplierall = async function commodity_list_supplierall(r
                 err.status = 404;
                 res.send({status:404,msg:"commodity list is empty"});
             }
+            else{
+                res.send({
+                    status:200,
+                    msg:"show supplier's commodity list successfully",
+                    data:query
+                })
+            }
             //res.send(res);
-            res.send({
-                status:200,
-                msg:"show supplier's commodity list successfully",
-                data:query
-            })
         })
     }
     catch(err){
