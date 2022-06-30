@@ -51,11 +51,13 @@ exports.user_detail = async function user_detail(req, res,){
                     //return handleError(err);
                     res.send({status:401,
                     msg:"cannot find user"})
+                }
+                else{
+                    console.log(query);
+                    res.send({status:200,
+                    data:query,
+                    meg:"find user"});
                 } 
-                console.log(query);
-                res.send({status:200,
-                data:query,
-                meg:"find user"});
         })
     }
     catch(err){
@@ -74,11 +76,14 @@ exports.user_delete = async function user_delete(req,res){
                     msg:"delete user failure"
                 })
             }
-            res.send({
-                status:200,
-                data:query,
-                msg: "delete user successfully",
-            });
+            else{
+                res.send({
+                    status:200,
+                    data:query,
+                    msg: "delete user successfully",
+                });
+            }
+            
         })
         
     }

@@ -120,11 +120,14 @@ exports.commodity_detail = async function commodity_detail(req, res){
                     //return handleError(err);
                     res.send({status:401,
                     msg:"cannot find commodity"})
+                }
+                else{
+                    console.log(query);
+                    res.send({status:200,
+                    data:query,
+                    msg:"find commodity successfully"});
                 } 
-                console.log(query);
-                res.send({status:200,
-                data:query,
-                meg:"find commodity successfully"});
+                
         })
     }
     catch(err){
@@ -143,11 +146,14 @@ exports.commodity_search = async function commodity_search(req, res){
                     msg:"cannot find commodity",
                 });
             }
-            res.send({
-                status:200,
-                data:query,
-                msg:"find commodity successfully",
-            });
+            else{
+                res.send({
+                    status:200,
+                    data:query,
+                    msg:"find commodity successfully",
+                });
+            }
+            
         });
         
        
@@ -175,12 +181,15 @@ exports.commodity_create =async function commodity_create(req,res){
                     msg:"create failure"
                 })
             }
-            console.log("add new commodity");
-            res.send({
-                status:200,
-                //data:query,
-                msg: "add new commodity successfully",
-            });
+            else{
+                console.log("add new commodity");
+                res.send({
+                    status:200,
+                    //data:query,
+                    msg: "add new commodity successfully",
+                });
+            }
+           
         });
         
     }
@@ -200,11 +209,14 @@ exports.commodity_delete = async function commodity_delete(req,res){
                     msg:"delete commodity failure"
                 })
             }
-            res.send({
-                status:200,
-                data:query,
-                msg: "delete commodity successfully",
-            });
+            else{
+                res.send({
+                    status:200,
+                    data:query,
+                    msg: "delete commodity successfully",
+                });
+            }
+            
         })
         
     }
@@ -230,12 +242,15 @@ exports.commodity_update = async function commodity_update(req, res){
                     msg:"update commodity failure"
                 })
             }
-            console.log("update commodity successfully");
-            res.send({
-                status:200,
-                data:query,
-                msg:"update commodity successfully"
-            })
+            else{
+                console.log("update commodity successfully");
+                res.send({
+                    status:200,
+                    data:query,
+                    msg:"update commodity successfully"
+                })
+            }
+            
         });
        
 
