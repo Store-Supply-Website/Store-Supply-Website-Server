@@ -53,6 +53,6 @@ router.post('/upload',upload.single('file'),image_controller.create);
 
 router.get("/files/:image_id",image_controller.read);
 
-router.get("files/:image_id",image_controller.remove);
+router.get("/files/delete",image_controller.remove);
 
 module.exports = router;
