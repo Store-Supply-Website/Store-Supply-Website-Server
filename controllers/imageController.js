@@ -1,6 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const md5 = require('md5');
+const multer = require("multer");
 
 const ImageModel = require('../models/image');
 
@@ -8,10 +9,11 @@ const ImageModel = require('../models/image');
 module.exports = {
   
   create: function(req, res) {
+    console.log("testing upload image");
     var tempPath = req.file.path;
     var imgUrl = req.file.filename;
     var ext = path.extname(req.file.originalname).toLowerCase();
-    var targetPath = path.resolve('./public/upload/' + imgUrl + ext);
+    var targetPath = path.resolve('./public/upload/' + imgUrl );
 
     if (ext === '.png' || ext === '.jpg' || ext === '.jpeg' || ext === '.gif') {
       fs.rename(tempPath, targetPath, function(err) {

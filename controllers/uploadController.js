@@ -1,13 +1,16 @@
 const upload = require("../models/upload");
-const dbConfig = require("../config/db");
+
 
 const MongoClient = require("mongodb").MongoClient;
 const GridFSBucket = require("mongodb").GridFSBucket;
 
-const url = dbConfig.url;
+//const url = dbConfig.url;
+var dev_db_url = 'mongodb+srv://cs5610:cs5610@storesupplycluster.e0vgk.mongodb.net/store-supply?retryWrites=true&w=majority';
+var url = process.env.DB_URI || dev_db_url;
 
-const baseUrl = "http://localhost:8080/files/";
-
+//const baseUrl = "http://localhost:8080/files/";
+const port = process.env.PORT || 5000
+const baseUrl = "http://localhost:"+port+"/files/";
 const mongoClient = new MongoClient(url);
 
 const uploadFiles = async (req, res) => {
@@ -22,7 +25,7 @@ const uploadFiles = async (req, res) => {
       }
   
       return res.status(200).send({
-        message: "文件上传成功",
+        message: "upload file successfully",
       });
   
       // console.log(req.file);
@@ -57,8 +60,8 @@ const getListFiles = async (req, res) => {
         try {
           await mongoClient.connect();
       
-          const database = mongoClient.db(dbConfig.database);
-          const images = database.collection(dbConfig.imgBucket + ".files");
+          const database = mongoClient.db("store-supply"); //dbConfig.database
+          const images = database.collection('photos'+ ".files");
           let fileInfos = [];
       
           if ((await images.estimatedDocumentCount()) === 0) {
@@ -85,9 +88,9 @@ const getListFiles = async (req, res) => {
     const download = async (req, res) => {
         try {
           await mongoClient.connect();
-          const database = mongoClient.db(dbConfig.database);
+          const database = mongoClient.db("store-supply"); //dbConfig.database
           const bucket = new GridFSBucket(database, {
-            bucketName: dbConfig.imgBucket,
+            bucketName: "photos",
           });
       
           let downloadStream = bucket.openDownloadStreamByName(req.params.name);
