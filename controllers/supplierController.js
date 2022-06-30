@@ -23,12 +23,15 @@ exports.user_update =async function user_update(req,res){
                     msg:"update user failure"
                 })
             }
-            console.log("update user successfully");
-            res.send({
-                status:200,
-                data:query,
-                msg:"update user successfully"
-            })
+            else{
+                console.log("update user successfully");
+                res.send({
+                    status:200,
+                    data:query,
+                    msg:"update user successfully"
+                })
+            }
+            
         });
 
     }
