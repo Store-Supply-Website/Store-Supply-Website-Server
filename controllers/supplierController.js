@@ -41,12 +41,12 @@ exports.user_update =async function user_update(req,res){
 
 }
 
-exports.user_detail = async function user_detail(req, res,){
+exports.user_detail = async function user_detail(req, res){
 
     console.log("show user details");
 
     try{
-        User.findById(req.params.id).exec((err,res)=>{
+        User.findById(req.params.id).exec((err,query)=>{
                 if(err){
                     //return handleError(err);
                     res.send({status:401,
