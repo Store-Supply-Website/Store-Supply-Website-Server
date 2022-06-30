@@ -1,5 +1,22 @@
 # Store-Supply-Website-Server 
 Group Members:Chenjie Bei, Yan Wang, Yutong Shang
+## How we divide tasks: <br />
+Front end: Commodity page, signin, signup page. Complete add, delete, and edit functions-Yan Wang <br />
+Backend: creating mongoDB collections, create search commodity, update user info, signin, signup function-Chenjie Bei <br />
+Front end: User page, update page, Complete add, delete, and edit functions, maintain READMe and meeting minutes, create slides-Yutong Shang <br />
+
+!!!TBD: Tag iteration
+!!!Page images
+
+
+## Iteration 3 achievement
+1.Complete Commodity pag, Navigation bar, sign in page, register page, user profile page, user info update page<br />
+2. Complete seting up all routes and links in all pages.<br />
+3. Implement Material UI in all pages and make sure the style in all pages are consistent.<br />
+4. Complete in implementing CRUD operation<br />
+5. Add supply button, Edit supply info and Update user info button will use Post method to add into database<br />
+6. Test in local file and deploy front end and backend to heroku  https://store-supply-website.herokuapp.com/. <br />
+
 ## Iteration2 achievement  <br />
 
 1.Front End: <br />
