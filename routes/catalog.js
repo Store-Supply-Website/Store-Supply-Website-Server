@@ -40,10 +40,10 @@ router.post('/supplier/delete',supplier_controller.user_delete);
 //router.get("/files",upload_controller.getListFiles);
 
 //router.get("files/:name",upload_controller.download);
-router.post('/upload',upload.single('file'),image_controller.create);
+//router.post('/upload',upload.single('file'),image_controller.create);
 
-router.get("/files/:image_id",image_controller.read);
+//router.get("/files/:image_id",image_controller.read);
 
-router.get("/files/delete",image_controller.remove);
+//router.get("/files/delete",image_controller.remove);
 
 module.exports = router;
