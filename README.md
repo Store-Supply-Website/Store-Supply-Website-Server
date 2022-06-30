@@ -1,3 +1,8 @@
+!!!TBD: Tag iteration
+!!!Page images
+Upload accessibility report
+Merge to main
+
 # Store-Supply-Website-Server 
 Group Members:Chenjie Bei, Yan Wang, Yutong Shang
 ## How we divide tasks: <br />
@@ -5,10 +10,6 @@ Front end: Commodity page, signin, signup page. Complete add, delete, and edit f
 Backend: creating mongoDB collections, create search commodity, update user info, signin, signup function-Chenjie Bei <br />
 Front end: User page, update page, Complete add, delete, and edit functions, maintain READMe and meeting minutes, create slides-Yutong Shang <br />
 
-!!!TBD: Tag iteration
-!!!Page images
-Upload accessibility report
-Merge to main
 
 
 ## Iteration 3 achievement
