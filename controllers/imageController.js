@@ -39,7 +39,7 @@ module.exports = {
 
   remove: function(req, res) {
     //ImageModel.findOne({ filename: { $regex: req.params.image_id } }, function(
-      ImageModel.findById(req.params.image_id), function(err,image){
+      ImageModel.findById(req.params.image_id).exec((err,image)=>{
       if (err) throw err;
       fs.unlink(path.resolve('./public/upload/' + image.filename), function(
         err,
