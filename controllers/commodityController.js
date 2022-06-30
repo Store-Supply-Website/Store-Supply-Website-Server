@@ -221,9 +221,9 @@ exports.commodity_update = async function commodity_update(req, res){
             commodityname:req.body.commodityname,
             content:req.body.content,
             date:Date.now(),
-            _id:req.params.id  //old id
+            _id:req.body.id  //old id
         }).
-        Commodity.findByIdAndUpdate(req.params.id, newCommodity,{}, function(err, query){
+        Commodity.findByIdAndUpdate(req.body.id, newCommodity,{}, function(err, query){
             if(err){
                 res.send({
                     status:401,

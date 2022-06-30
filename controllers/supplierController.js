@@ -14,9 +14,9 @@ exports.user_update =async function user_update(req,res){
             
             phone:req.body.phone,
             address:req.body.address,
-            _id:req.params.id  //old id
+            _id:req.body.id  //old id
         });
-        User.findByIdAndUpdate(req.params.id, newUser,{}, function(err, query){ //query可以改为newuser
+        User.findByIdAndUpdate(req.body.id, newUser,{}, function(err, query){ //query可以改为newuser
             if(err){
                 res.send({
                     status:401,
