@@ -7,6 +7,8 @@ Front end: User page, update page, Complete add, delete, and edit functions, mai
 
 !!!TBD: Tag iteration
 !!!Page images
+Upload accessibility report
+Merge to main
 
 
 ## Iteration 3 achievement
