@@ -13,19 +13,20 @@ module.exports = {
     var tempPath = req.file.path;
     var imgUrl = req.file.filename;
     var ext = path.extname(req.file.originalname).toLowerCase();
-    var targetPath = path.resolve('./public/upload/' + imgUrl );
+    var targetPath = path.resolve('./public/upload/' + imgUrl+ext );
 
     if (ext === '.png' || ext === '.jpg' || ext === '.jpeg' || ext === '.gif') {
       fs.rename(tempPath, targetPath, function(err) {
         if (err) throw err;
           const newImg = new ImageModel({
           title: req.body.title,
-          description: req.body.description,
+          imgdata: fs.readFileSync(targetPath),
+          imgtype:ext,
           filename: imgUrl + ext,
         });
         newImg.save(function(err, image) {
           if (err) throw err;
-          res.send({status:200,msg:"image save successfully",data:image});
+          res.send({status:200,msg:"image save successfully",data:image.imgdata});
           //image.uniqueId);
         });
       });
@@ -38,8 +39,7 @@ module.exports = {
   },
 
   remove: function(req, res) {
-    //ImageModel.findOne({ filename: { $regex: req.params.image_id } }, function(
-      ImageModel.findById(req.params.image_id).exec((err,image)=>{
+    ImageModel.findOne({ filename: { $regex: req.params.image_id } }, function(err,image){
       if (err) throw err;
       fs.unlink(path.resolve('./public/upload/' + image.filename), function(
         err,

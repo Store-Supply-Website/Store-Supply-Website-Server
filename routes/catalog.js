@@ -3,16 +3,7 @@ var router = express.Router();
 const path = require('path');
 
 var multer = require('multer');
-var storage = multer.diskStorage({
-    //设置图片上传后存放的路径(默认放在系统临时文件夹中)
-    destination: function(req,file,cb){
-        cb(null,'./public/photos');
-    },
-    //设置图片上传后图片的名称(默认随机给一个名字)
-    filename: function(req,file,cb){
-        cb(null,file.originalname);
-    }
-});
+
 
 const upload = multer({ dest: path.join(__dirname, 'public/upload/temp') });
 // Require our controllers.
