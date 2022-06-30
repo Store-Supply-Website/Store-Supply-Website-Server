@@ -19,11 +19,14 @@ module.exports = {
       fs.rename(tempPath, targetPath, function(err) {
         if (err) throw err;
           const newImg = new ImageModel({
+          commodity: req.body.commodity,
           title: req.body.title,
           imgdata: fs.readFileSync(targetPath),
           imgtype:ext,
           filename: imgUrl + ext,
         });
+        
+        console.log("upload image successfully");
         newImg.save(function(err, image) {
           if (err) throw err;
           res.send({status:200,msg:"image save successfully",data:image.imgdata});

@@ -4,9 +4,10 @@ const path = require('path');
 const Schema = mongoose.Schema;
 
 const ImageSchema = new Schema({
+  commodity:{type: Schema.ObjectId, ref:'Commodity'},
   title: { type: String },
-  imgdata: {Buffer},
-  imgtype:{String},
+  imgdata: {type: Buffer},
+  imgtype:{type:String},
   filename: { type: String },
   
 });

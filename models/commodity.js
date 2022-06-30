@@ -12,7 +12,9 @@ var CommoditySchema=new Schema({
   //phone:{type:string, required:true},
   date:{type:Date},
   //num:{type:String},
-
+  imgdata: {type: Buffer},
+  imgtype:{type:String},
+  filename: { type: String },
   //genre:[{type:Schema.ObjectId, ref:'Genre' }]
   
 },{collection:'Commodity'});

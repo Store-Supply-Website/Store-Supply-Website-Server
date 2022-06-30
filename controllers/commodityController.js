@@ -1,6 +1,10 @@
 var Commodity = require('../models/commodity');
 var User = require('../models/user');
 var async = require('async');
+const fs = require('fs');
+const path = require('path');
+const md5 = require('md5');
+const multer = require("multer");
 
 
 const { body,validationResult } = require("express-validator");
@@ -178,11 +182,30 @@ exports.commodity_create =async function commodity_create(req,res){
     console.log("create commodity");
 
     try{
+        var tempPath = req.file.path;
+        var imgUrl = req.file.filename;
+        var ext = path.extname(req.file.originalname).toLowerCase();
+        var targetPath = path.resolve('./public/upload/' + imgUrl+ext );
+        
+        if (ext === '.png' || ext === '.jpg' || ext === '.jpeg' || ext === '.gif'||ext == ""){
+            fs.rename(tempPath, targetPath);
+        }
+        else{
+            fs.unlink(tempPath, function(err) {
+              if (err) throw err;
+              res.json({status:500, msg:'file format is wrong' });
+            });
+            return;
+        }
+        //fs.rename(tempPath, targetPath);
         const newCommodity = await Commodity.create({
             supplier:req.body.user,
             commodityname:req.body.commodityname,
             content:req.body.content,
-            date:Date.now()
+            date:Date.now(),
+            imgdata: fs.readFileSync(targetPath),
+            imgtype:ext,
+            filename: imgUrl + ext,
         });
         newCommodity.save(function(err){
             if(err){
