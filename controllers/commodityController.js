@@ -63,7 +63,7 @@ exports.commodity_list_supplier = async function commodity_list_supplier(req,res
     console.log("show commodity_list");
 
     try{
-        Commodity.find({'supplier':req.body.user}).sort({date:-1}).limit(6).exec((err, query)=>{
+        Commodity.find({'supplier':req.body.id}).sort({date:-1}).limit(6).exec((err, query)=>{
             if(err) return handleError(err);
             console.log(query);
             if(query.length==0){
@@ -93,7 +93,7 @@ exports.commodity_list_supplierall = async function commodity_list_supplierall(r
     console.log("show commodity_list");
 
     try{
-        Commodity.find({'supplier':req.body.user}).sort({date:-1}).limit(6).exec((err, query)=>{
+        Commodity.find({'supplier':req.body.id}).sort({date:-1}).limit(6).exec((err, query)=>{
             if(err) return handleError(err);
             console.log(query);
             if(query.length==0){
