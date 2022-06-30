@@ -2,6 +2,8 @@
 !!!Page images
 Upload accessibility report
 Merge to main
+upload hw
+slide divide parts
 
 # Store-Supply-Website-Server 
 Group Members:Chenjie Bei, Yan Wang, Yutong Shang
