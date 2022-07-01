@@ -182,53 +182,31 @@ exports.commodity_create =async function commodity_create(req,res){
     console.log("create commodity");
 
     try{
-        console.log("testing upload image");
-        var tempPath = req.file.path;
-        var imgUrl = req.file.filename;
-        var ext = path.extname(req.file.originalname).toLowerCase();
-        var targetPath = path.resolve('./public/upload/' + imgUrl+ext );
-        
-        if (ext === '.png' || ext === '.jpg' || ext === '.jpeg' || ext === '.gif'||ext == ""){
-            fs.rename(tempPath, targetPath, async function(err){
-                if(err) throw err;
-
-                const newCommodity = await Commodity.create({
-                    supplier:req.body.user,
-                    commodityname:req.body.commodityname,
-                    content:req.body.content,
-                    date:Date.now(),
-                    imgdata: fs.readFileSync(targetPath),
-                    imgtype:ext,
-                    filename: imgUrl + ext,
-                });
-
-                newCommodity.save(function(err){
-                    if(err){
-                        res.send({
-                            status:401,
-                            msg:"create failure"
-                        })
-                    }
-                    else{
-                        console.log("add new commodity");
-                        res.send({
-                            status:200,
-                            //data:query,
-                            msg: "add new commodity successfully",
-                        });
-                    }
-                   
-                });
+            const newCommodity = await Commodity.create({
+                supplier:req.body.user,
+                commodityname:req.body.commodityname,
+                content:req.body.content,
+                date:Date.now(),
+                imgUrl:req.body.imgUrl,
             });
-    }
-    else{
-        fs.unlink(tempPath, function(err) {
-          if (err) throw err;
-          res.json({status:500, msg:'file format is wrong' });
-        });
-        return;
-    }
-        
+
+            newCommodity.save(function(err){
+                if(err){
+                    res.send({
+                        status:401,
+                        msg:"create failure"
+                    })
+                }
+                else{
+                    console.log("add new commodity");
+                    res.send({
+                    status:200,
+                            //data:query,
+                    msg: "add new commodity successfully",
+                    });
+                }
+                   
+            });
     }
     catch(err){
         console.log(err);

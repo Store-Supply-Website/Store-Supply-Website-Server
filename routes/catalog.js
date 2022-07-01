@@ -25,7 +25,7 @@ router.post('/commodity/delete',commodity_controller.commodity_delete);
 
 router.post('/commodity/update',commodity_controller.commodity_update);
 
-router.post('/commodity/create',upload.single('file'),commodity_controller.commodity_create);
+router.post('/commodity/create',commodity_controller.commodity_create);
 
 router.get('/supplier/:id',commodity_controller.commodity_list_supplierall);
 
