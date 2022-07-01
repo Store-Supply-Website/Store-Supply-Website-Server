@@ -26,7 +26,7 @@ Front end: User page, update page,save images to database and display images, Co
 -Merge to main(done)<br />
 -upload to canvas(done)<br />
 -Prepare presentation and review slide(done)<br />
--Tag iteration<br />
+-Tag iteration (done)<<br />
 
 ## Plans to continue working on this project
 -Add location function, and enable users to buy and sell locally. <br /> 
@@ -36,8 +36,10 @@ Front end: User page, update page,save images to database and display images, Co
 ## Images of Web pages
 <img width="1497" alt="image" src="https://user-images.githubusercontent.com/98197405/176757843-ca363826-97ae-4281-be7d-c1c57b37dfcb.png">
 <img width="1514" alt="image" src="https://user-images.githubusercontent.com/98197405/176757932-1866d513-4d06-49bc-acee-5d1c9d5adf52.png">
-![image](https://user-images.githubusercontent.com/98197405/176843151-44ecfbf9-2ca1-4bc0-ba31-32691876e256.png)
-![image](https://user-images.githubusercontent.com/98197405/176843171-8202c55c-dde9-4b63-9c39-aae46708dd71.png)
+<img width="1683" alt="image" src="https://user-images.githubusercontent.com/98197405/176843603-2bd3fd53-3ac9-47e4-82bf-608117aa3263.png">
+ <img width="1673" alt="image" src="https://user-images.githubusercontent.com/98197405/176843673-0fd2501f-4c3a-45e5-aa0c-63da5842774b.png">
+<img width="1680" alt="image" src="https://user-images.githubusercontent.com/98197405/176843757-d88398da-f45e-4ee6-bec3-9270e683a12a.png">
+
 <img width="1529" alt="image" src="https://user-images.githubusercontent.com/98197405/176758208-ddbd0dff-f829-4e50-b18b-7517d76b8ebe.png">
 <img width="1574" alt="image" src="https://user-images.githubusercontent.com/98197405/176758483-6f35077b-8577-4ad6-9e74-7f2ff58bf715.png">
 <img width="1555" alt="image" src="https://user-images.githubusercontent.com/98197405/176758539-6ce020bf-80a9-4cdf-bce8-fa330e836c76.png">
