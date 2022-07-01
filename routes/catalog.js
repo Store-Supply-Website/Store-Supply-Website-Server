@@ -9,8 +9,7 @@ const upload = multer({ dest: path.join(__dirname, 'public/upload/temp') });
 // Require our controllers.
 var commodity_controller = require('../controllers/commodityController'); 
 var supplier_controller = require("../controllers/supplierController");
-//var upload_controller = require("../controllers/uploadController");
-var image_controller = require("../controllers/imageController");
+
 
 router.get('/homepage',commodity_controller.commodity_list);
 

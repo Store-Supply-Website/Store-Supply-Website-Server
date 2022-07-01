@@ -37,7 +37,7 @@ exports.commodity_list = async function commodity_list(req,res){
                 data:query
             })
         })*/
-        Commodity.find({},'supplier commodityname date').sort({date:-1}).limit(12).exec((err, query)=>{
+        Commodity.find({}).sort({date:-1}).limit(12).exec((err, query)=>{
             if(err) return handleError(err);
             console.log(query);
             if(query.length==0){
