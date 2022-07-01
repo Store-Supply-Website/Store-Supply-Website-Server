@@ -35,15 +35,14 @@ app.use('/', usersLogin)
 
 
 
-//var catalogRouter = require('./routes/catalog.js'); 
+var catalogRouter = require('./routes/catalog.js'); 
 
-//var catalogRouter = require('./routes/catalog')
-
-//app.use('/catalog', catalogRouter); 
+app.use('/catalog', catalogRouter); 
 
 app.get('/register', function (req, res) {
-    //res.send('this is register!')
+    res.send('this is register!')
 })
+
 
 
 /*
@@ -54,5 +53,5 @@ app.listen(port, function () {
     db.connectToDB();
 });
 */
- module.exports = app
+ module.exports = app;
 
