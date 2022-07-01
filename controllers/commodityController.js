@@ -127,7 +127,15 @@ exports.commodity_detail = async function commodity_detail(req, res){
     console.log("show commodity details");
 
     try{
-        Commodity.findById(req.params.id).exec((err,query)=>{
+        async.parallel({
+            commodity: function(callback){
+                
+                Commodity.findById(req.body.commodityid).populate('supplier').exec(callback);
+            },
+            supplier: function(callback){
+                User.findById(req.body.supplierid).exec(callback);
+            },
+        },function(err,query){
                 if(err){
                     //return handleError(err);
                     res.send({status:401,
@@ -140,7 +148,9 @@ exports.commodity_detail = async function commodity_detail(req, res){
                     msg:"find commodity successfully"});
                 } 
                 
-        })
+        });
+        
+       
     }
     catch(err){
         console.log(err);
@@ -248,6 +258,7 @@ exports.commodity_update = async function commodity_update(req, res){
             commodityname:req.body.commodityname,
             content:req.body.content,
             date:Date.now(),
+            imgUrl:req.body.imgUrl,
             _id:req.body.id  //old id
         });
         Commodity.findByIdAndUpdate(req.body.id, newCommodity,{}, function(err, query){

@@ -19,7 +19,7 @@ router.post('/homepagelist',commodity_controller.commodity_list_supplier);
 router.post('/commodity',commodity_controller.commodity_search);
 
 
-router.get('/commodity/:id',commodity_controller.commodity_detail);
+router.post('/commodity/detail',commodity_controller.commodity_detail);
 
 router.post('/commodity/delete',commodity_controller.commodity_delete);
 
