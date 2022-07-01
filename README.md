@@ -28,8 +28,10 @@ Front end: User page, update page,save images to database and display images, Co
 -Prepare presentation and review slide(done)<br />
 -Tag iteration<br />
 
-##Plans to continue working on this project
-Add location function, and enable users to buy and sell locally.  Add wishlist and notification function. Add payment function to enable uses to complete purchase.
+## Plans to continue working on this project
+-Add location function, and enable users to buy and sell locally. <br /> 
+-Add wishlist and notification function.<br /> 
+-Add payment function to enable uses to complete purchase.<br /> 
 
 ## Images of Web pages
 <img width="1497" alt="image" src="https://user-images.githubusercontent.com/98197405/176757843-ca363826-97ae-4281-be7d-c1c57b37dfcb.png">
