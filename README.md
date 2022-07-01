@@ -1,6 +1,6 @@
 # Store-Supply-Website-Server 
-Group Members:Chenjie Bei, Yan Wang, Yutong Shang
-## How we divide tasks: <br />
+Group 6, Members:Chenjie Bei, Yan Wang, Yutong Shang
+## How we divided tasks: <br />
 Front end: Commodity page, signin, signup page, save images to database and display images. Complete add, delete, and edit functions for all pages-Yan Wang <br />
 Backend: creating mongoDB collections, create search commodity, update user info, signin, signup functions, save images to database and display images-Chenjie Bei <br />
 Front end: User page, update page,save images to database and display images, Complete add, delete, and edit functions, maintain READMe and meeting minutes, create slides-Yutong Shang <br />
@@ -9,23 +9,29 @@ Front end: User page, update page,save images to database and display images, Co
 
 ## Iteration 3 achievement
 1. Completed Commodity pag, Navigation bar, sign in page, register page, user profile page, user info update page<br />
-2. Completed seting up all routes and links in all pages.<br />
-3. Implemented Material UI in all pages and made sure the style in all pages are consistent.<br />
-4. Completed implementing CRUD operation and tested all CRUD operations<br />
-5. Added supply button, Edit supply info and Update user info button will use Post method to add into database. <br />
-6. Tested in local file and deployed front end and backend to heroku  https://store-supply-website.herokuapp.com/. <br />
-7. Maintained a good shape in project. We made frequent commmits to our own branches and name commits meaningfully and gave detailed name or description. <br /> 
-8. We made pull requests to merge to other branches. All team members review pull requests before merge. We reviewed and fixed conflicts before merging.<br />
+2. Searched and found solutions in saving images to database and display images on pages.
+3. Completed seting up all routes and links in all pages.<br />
+4. Implemented Material UI in all pages and made sure the style in all pages are consistent.<br />
+5. Completed implementing CRUD operation and tested all CRUD operations<br />
+6. Added supply button, Edit supply info and Update user info button will use Post method to add into database. <br />
+7. Tested in local file and deployed front end and backend to heroku. https://store-supply-website.herokuapp.com/. <br />
+8. Maintained a good shape in project. We made frequent commmits to our own branches and name commits meaningfully and gave detailed name or description. <br /> 
+9. We made pull requests to merge to other branches. All team members review pull requests before merge. We reviewed and fixed conflicts before merging.<br />
+10. Ran accessibility reports using lighthouse and fixed issues to improve accessibility score.
 
-##To do list 
-Shoot video
-Add Page images-Github(done)
-Upload accessibility report(done)
-Merge to main
-upload to canvas
-slide divide parts
-Tag iteration
+### To do list (completed)
+-Prepare demo video(done)<br />
+-Add Page images-Github(done)<br />
+-Upload accessibility report(done)<br />
+-Merge to main(done)<br />
+-upload to canvas(done)<br />
+-Prepare presentation and review slide(done)<br />
+-Tag iteration<br />
 
+##Plans to continue working on this project
+Add location function, and enable users to buy and sell locally.  Add wishlist and notification function. Add payment function to enable uses to complete purchase.
+
+## Images of Web pages
 <img width="1497" alt="image" src="https://user-images.githubusercontent.com/98197405/176757843-ca363826-97ae-4281-be7d-c1c57b37dfcb.png">
 <img width="1514" alt="image" src="https://user-images.githubusercontent.com/98197405/176757932-1866d513-4d06-49bc-acee-5d1c9d5adf52.png">
 <img width="1507" alt="image" src="https://user-images.githubusercontent.com/98197405/176758056-035612e9-c81f-41ab-8652-d1dfefc49c87.png">
